@@ -24,5 +24,7 @@ window.addEventListener('resize', () => {
   resizeTimeout = setTimeout(getInfo, 100, 'Resized');
 });
 
+getInfo();
+
 // window.onload = getInfo;
 // window.onresize = getInfo;
