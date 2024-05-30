@@ -6,11 +6,11 @@ function callMobile() {
 }
 
 function callDesktop() {
-  section.style.backgroundColor = 'coral';
+  section.style.backgroundColor = 'hotpink';
   console.log('Desktop running');
 }
 
-function getInfo() {
+function getInfo(e) {
   if (window.innerWidth <= 430) {
     callMobile();
   } else {
@@ -19,12 +19,22 @@ function getInfo() {
 }
 
 let resizeTimeout;
-window.addEventListener('resize', () => {
+let dwidth = window.innerWidth;
+
+window.addEventListener('resize', (e) => {
+  e.preventDefault();
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(getInfo, 100, 'Resized');
+  resizeTimeout = setTimeout(getInfo.bind(e), 100, 'Resized');
 });
 
 getInfo();
+
+// $(window).on('resize', function () {
+//   if (screenwidth !== $(window).width()) {
+//     //action performed while resize
+//     location.reload();
+//   }
+// });
 
 // window.onload = getInfo;
 // window.onresize = getInfo;
