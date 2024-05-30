@@ -29,6 +29,15 @@ window.addEventListener('resize', (e) => {
 
 getInfo();
 
+  // var cachedWidth = $(window).width();
+  //   $(window).resize(function(){
+  //       var newWidth = $(window).width();
+  //       if(newWidth !== cachedWidth){
+  //           //DO RESIZE HERE
+  //           cachedWidth = newWidth;
+  //       }
+  //   });
+
 // $(window).on('resize', function () {
 //   if (screenwidth !== $(window).width()) {
 //     //action performed while resize
